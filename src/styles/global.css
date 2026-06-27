@@ -7,7 +7,22 @@
 @source not "../pages/og-image";
 @config "../../tailwind.config.ts";
 
-/* === SpaceX-Inspired Glassmorphism Design === */
+/* === Glassmorphism Design === */
+
+/* Dark background fallback (replace with your own video/image) */
+.spacex-body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 30%, #0a0a1a 60%, #0a0a0a 100%);
+}
+.spacex-body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(255,100,50,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 30% 60%, rgba(80,120,255,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 80%, rgba(255,200,50,0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
 
 /* Video Background */
 .video-bg {
