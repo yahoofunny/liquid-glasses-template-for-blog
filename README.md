@@ -14,7 +14,7 @@ A clean, modern blog template with a **glassmorphism** design and fullscreen vid
 ## Quick Start
 
 ```bash
-git clone https://github.com/yahoofunny/liquid-glasses-template-for-blog.git
+git clone https://github.com/yahoofunny/liquid-glasses-template-for-blog.git space
 cd space
 pnpm install
 pnpm dev
