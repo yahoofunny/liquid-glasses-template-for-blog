@@ -1,0 +1,183 @@
+@layer theme, base, pagefind, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@source not "../pages/og-image";
+@config "../../tailwind.config.ts";
+
+/* === SpaceX-Inspired Glassmorphism Design === */
+
+/* Video Background */
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(1px);
+}
+
+/* Glass Header */
+.glass-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-header a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.nav-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+.nav-link:hover { color: #fff; }
+
+/* Glass Cards (for posts, sections) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.4s ease;
+}
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.glass-card a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.glass-card a:hover { color: #fff; }
+
+/* Glass input for search */
+.glass-input {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+.glass-input:focus {
+  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.12);
+}
+
+/* Typography */
+.spacex-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.glass-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.glass-card .post-meta {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.glass-card .post-desc {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+/* Prose overrides for glass look */
+.prose {
+  color: rgba(255,255,255,0.85);
+}
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #fff;
+}
+.prose a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose code {
+  background: rgba(255,255,255,0.1);
+  color: #e0e0e0;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.prose pre {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+}
+.prose blockquote {
+  border-left: 3px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.6);
+}
+.prose table th {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.prose table td {
+  border-color: rgba(255,255,255,0.1);
+}
+.prose hr {
+  border-color: rgba(255,255,255,0.1);
+}
+.prose strong {
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
+
+/* Selection */
+::selection {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
