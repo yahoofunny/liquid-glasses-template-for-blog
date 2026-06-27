@@ -8,7 +8,7 @@ A clean, modern blog template with a **glassmorphism** design and fullscreen vid
 - 🎥 Fullscreen video background
 - 🌗 Dark theme optimized
 - 📱 Responsive sidebar with mobile drawer
-- 📝 Markdown/MDX posts with auto TOC
+- 📝 Markdown/MDX/latex posts with auto TOC
 - 🚀 Deploy to Cloudflare Pages
 
 ## Quick Start
